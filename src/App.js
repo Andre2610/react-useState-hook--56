@@ -2,6 +2,8 @@ import './App.css';
 import Title from './components/Title';
 import Planet from './components/Planets';
 import State from './components/State';
+import DataFetching from './components/DataFetching';
+import MoreDataFetching from './components/MoreDataFetching';
 
 function App() {
   const planets = [
@@ -86,8 +88,13 @@ function App() {
         content={'This is being passed down as a prop'}
         anotherProp={parentComponentVariable}
       />
-      <Planet /> */}
-      <State />
+      {planets.map((planet, i) => {
+        console.log('The i', i);
+        return <Planet key={i} name={planet.name} />;
+      })}
+      <State /> */}
+      {/* <DataFetching /> */}
+      <MoreDataFetching />
     </div>
   );
 }
